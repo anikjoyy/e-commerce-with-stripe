@@ -1,18 +1,15 @@
+import { Route, Routes } from 'react-router-dom';
 import './App.scss';
-import FeaturedCollection from './components/FeaturedCollection/FeaturedCollection';
-import Footer from './components/Footer/Footer';
-import Header from './components/Header/Header';
-import Hero from './components/Hero/Hero';
-import MainSection from './components/MainSection/MainSection';
+import HomePage from './components/HomePage';
+import NotFound from './components/NotFound';
 
 function App() {
   return (
     <div className='App'>
-      <Header />
-      <Hero />
-      <MainSection />
-      <FeaturedCollection />
-      <Footer />
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+        <Route path='*' element={<NotFound />} />
+      </Routes>
     </div>
   );
 }
